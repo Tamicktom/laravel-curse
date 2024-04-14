@@ -27,3 +27,22 @@ Route::redirect("/sobre", "/empresa");
 // });
 
 Route::view("/empresa", "empresa");
+
+
+Route::get("/news", function () {
+    return view("news");
+})->name("Noticias");
+
+Route::get("/novidades", function () {
+    return redirect()->route("Noticias");
+});
+
+Route::prefix("/admin")->group(function () {
+    Route::get("/users", function () {
+        return "Admin Users";
+    });
+
+    Route::get("/settings", function () {
+        return "Admin Settings";
+    });
+});
