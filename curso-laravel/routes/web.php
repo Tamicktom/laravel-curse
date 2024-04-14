@@ -37,12 +37,20 @@ Route::get("/novidades", function () {
     return redirect()->route("Noticias");
 });
 
-Route::prefix("/admin")->group(function () {
-    Route::get("/users", function () {
-        return "Admin Users";
-    })->name("admin.users");
 
-    Route::get("/settings", function () {
-        return "Admin Settings";
-    })->name("admin.settings");
+Route::group([
+    "prefix" => "admin",
+    "as" => "admin."
+], function () {
+    Route::get("/dashboard", function () {
+        return "Dashboard";
+    })->name("dashboard");
+
+    Route::get("/financeiro", function () {
+        return "Financeiro";
+    })->name("financeiro");
+
+    Route::get("/produtos", function () {
+        return "Produtos";
+    })->name("produtos");
 });
