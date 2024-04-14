@@ -40,9 +40,9 @@ Route::get("/novidades", function () {
 Route::prefix("/admin")->group(function () {
     Route::get("/users", function () {
         return "Admin Users";
-    });
+    })->name("admin.users");
 
     Route::get("/settings", function () {
         return "Admin Settings";
-    });
+    })->name("admin.settings");
 });
