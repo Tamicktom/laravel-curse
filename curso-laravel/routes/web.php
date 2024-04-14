@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,4 +17,8 @@ Route::any("/any", function () {
 
 Route::match(["get", "post"], "/match", function () {
     return "Match";
+});
+
+Route::get("/produto/{id}", function (Request $request, $id) {
+    return "Produto: {$id}";
 });
