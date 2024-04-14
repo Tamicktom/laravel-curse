@@ -10,5 +10,10 @@ class ProdutoController extends Controller
     {
         return "index";
     }
+
+    public function show($id = 0)
+    {
+        return "show $id";
+    }
 }
 
