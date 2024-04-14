@@ -7,10 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/empresa", function () {
-    return view("empresa");
-});
-
 Route::any("/any", function () {
     return "Any";
 });
@@ -22,3 +18,12 @@ Route::match(["get", "post"], "/match", function () {
 Route::get("/produto/{id}", function (Request $request, $id) {
     return "Produto: {$id}";
 });
+
+Route::redirect("/sobre", "/empresa");
+
+
+// Route::get("/empresa", function () {
+//     return view("empresa");
+// });
+
+Route::view("/empresa", "empresa");
