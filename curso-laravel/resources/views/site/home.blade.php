@@ -10,6 +10,8 @@
 {{ $idade ?? 'Não informado' }} <br>
 {{ $html ?? 'Não informado' }}
 
+@php $i = 0; @endphp
+
 @if ($nome == 'Roberto')
 <p>Olá, Roberto!</p>
 @elseif ($nome == 'Maria')
@@ -28,5 +30,7 @@
 <p>Usuário não autenticado</p>
 @endguest
 
+@for ($i = 0; $i < 10; $i++) <p>Valor: {{ $i }}</p>
+    @endfor
 
-@endsection
+    @endsection
