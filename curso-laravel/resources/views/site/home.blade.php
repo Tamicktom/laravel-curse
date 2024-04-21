@@ -1,10 +1,18 @@
 @extends('site.layout')
 
+@component("components.sidebar")
+@slot('paragrafo')
+<p>Essa é a sidebar da Home Page</p>
+@endslot
+@endcomponent
+
 @section('title', 'Essa é a Home Page')
 
 @section('conteudo')
 
 {{-- Isso é um comentário --}}
+
+@include('includes.mensagem', ['title' => 'Essa é uma mensagem de erro!'])
 
 {{ isset($nome) ? $nome : 'Fulano' }} <br>
 {{ $idade ?? 'Não informado' }} <br>
